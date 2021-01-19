@@ -1,0 +1,52 @@
+{%extends 'master.html'%}
+{%load static%}
+{% block content2 %}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a>
+</li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+		Sign up</a></li>
+{%endblock%}
+
+
+{%block content1%}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="signin-form profile"><br><br><br>
+				<h3 class="agileinfo_sign">Forgot Password</h3>
+				{% for message in messages %}
+                    <strong>Message:</strong> {{ message }}
+                {% endfor %}
+				<div class="login-form">
+					<form method="POST">
+						{% csrf_token %}
+						<input type="email" name="email" placeholder="E-mail" required="">
+                        <input type="text" name="mob" placeholder="Mobile" required="">
+                        <input type="password" name="pass1" placeholder="PassWord" required=''>
+                        <input type="password" name="pass2" placeholder="Confirm PassWord" required=''>
+						<div class="tp">
+							<input type="submit" name="login" value="CHANGE">
+						</div>
+					</form>
+				</div>
+				
+				<div class="login-social-grids">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+				
+				<p><a href="{% url 'bank:signup' %}"> Don't have an account? Click here to open new Account</a></p>
+			</div>
+        </div>
+		<div class="col-sm-6 justify-content-center">
+			<br><br><br><br>
+			<img src="{% static 'images/cyber2.png' %}" alt=" " class="img-responsive" width="700" height="400">
+			<br>
+		</div>
+
+	</div>
+</div>
+{%endblock%}

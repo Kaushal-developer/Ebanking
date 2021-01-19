@@ -1,0 +1,335 @@
+{% extends 'master.html'%}
+{% load static %}
+
+{%block content2%}
+{%if z1 is not None %}
+<!-- <audio controls autoplay style="display: none;"><source src="{%static '/voice/speech1.mp3'%}" type="audio/mp3"></audio> -->
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+{% block content1 %}
+<br>
+{%load static%}
+<div class="container-fluid" style="align-items: center;">
+    <img src="{%static 'images/novo.png' %}" class="image-responsive">
+    <h3 class="w3l_header w3_agileits_header"><span>Apply</span> Now </h3><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <div style="border-style: solid;border-color: rgb(173, 214, 230);">
+                <h4>Salary Account</h4><br>
+                <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-user" aria-hidden="true"></i>
+                    View More</a>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div style="border-style: solid;border-color:  rgb(173, 214, 230);">
+                <h4 class="card-title" style="align-items: center;">Saving Account</h4><br>
+                <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user" aria-hidden="true"></i>
+                    View More</a>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div style="border-style: solid;border-color:  rgb(173, 214, 230);">
+                <h4 class="card-title" style="align-items: center;">Buisness Account</h4><br>
+                <a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-user" aria-hidden="true"></i>
+                    View More</a>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <div style="border-style: solid;border-color: rgb(173, 214, 230);">
+                <h4 class="card-title" style="align-items: center;">Gold loan</h4><br>
+                <a href="#" data-toggle="modal" data-target="#myModal4"><i class="fa fa-user" aria-hidden="true"></i>
+                    View More</a>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div style="border-style: solid;border-color: rgb(173, 214, 230);">
+                <h4 class="card-title" style="align-items: center;">Buisness Loan</h4><br>
+                <a href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-user" aria-hidden="true"></i>
+                    View More</a>
+            </div>
+        </div>  
+        <div class="col-sm-4">
+            <div style="border-style: solid;border-color: rgb(173, 214, 230);">
+                <h4 class="card-title" style="align-items: center;">Home loan</h4><br>
+                <a href="#" data-toggle="modal" data-target="#myModal6"><i class="fa fa-user" aria-hidden="true"></i>
+                    View More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials">
+    <div class="container">
+        <h3 class="w3l_header w3_agileits_header"><span>Trending</span> Deals @ NOVASCOTIA</h3>
+        <p class="sub_para_agile">Take benefits of exclusive Offeres</p>
+        <!-- grid starts from here -->
+        
+            
+                {%for i in o%}
+                <div class="col-md-4 w3_agile_services_grid">
+                    <div class="agile_services_grid1 wthree_services_grid1">
+                        <img src="{{i.pic.url }}" height="180" width="318">
+                        <div class="agile_services_grid1_sub">
+                            <p>
+                                {{i.desc}}
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+    </div>
+</div>
+
+<!-- gallery -->
+
+<div class="gallery">
+    <h3 class="w3l_header w3_agileits_header">Latest <span>Gallery</span></h3>
+    <p class="sub_para_agile">Ipsum dolor sit amet consectetur adipisicing elit</p>
+    <div class="agile_team_grids_top">
+        <ul id="flexiselDemo1">
+            <li>
+                <div class="wthree_gallery_grid">
+                    <a href="{% static 'images/g1.jpg'%}" class="lsb-preview" data-lsb-group="header">
+                        <div class="view second-effect">
+                            <img src="{% static 'images/g1.jpg'%}" alt="" class="img-responsive" />
+                            <div class="mask">
+                                <p>NOVASCOTIA</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="wthree_gallery_grid">
+                    <a href="{% static 'images/g2.jpg'%}" class="lsb-preview" data-lsb-group="header">
+                        <div class="view second-effect">
+                            <img src="{% static 'images/g2.jpg'%}" alt="" class="img-responsive" />
+                            <div class="mask">
+                                <p>NOVASCOTIA</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="wthree_gallery_grid">
+                    <a href="{% static 'images/g3.jpg'%}" class="lsb-preview" data-lsb-group="header">
+                        <div class="view second-effect">
+                            <img src="{% static 'images/g3.jpg'%}" alt="" class="img-responsive" />
+                            <div class="mask">
+                                <p>NOVASCOTIA</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="wthree_gallery_grid">
+                    <a href="{% static 'images/g4.jpg'%}" class="lsb-preview" data-lsb-group="header">
+                        <div class="view second-effect">
+                            <img src="{% static 'images/g4.jpg'%}" alt="" class="img-responsive" />
+                            <div class="mask">
+                                <p>NOVASCOTIA</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="wthree_gallery_grid">
+                    <a href="{% static 'images/g5.jpg'%}" class="lsb-preview" data-lsb-group="header">
+                        <div class="view second-effect">
+                            <img src="{% static 'images/g5.jpg'%}" alt="" class="img-responsive" />
+                            <div class="mask">
+                                <p>NOVASCOTIA</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<!-- //gallery -->
+<!-- testimonials -->
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Salary Account</h3>
+                    <div class="container-fluid">
+                        <p>
+                            NOVASCOTIA Bank Salary Accounts offer employees seamless and convenient access to their
+                            salaries.
+                            Open a Salary Account that is most appropriate for your employees' job profiles and let them
+                            enjoy,
+                            a myriad of added benefits, including special debit cards.
+                            Help your employees to conveniently keep a tab on their salary and reimbursements.
+                        </p>
+                        <a href="{%url 'Account:account'%}">Apply Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Saving Account</h3>
+                    <div class="container-fluid">
+                        <p>
+                            NOVASCOTIA Bank provides its customers with the option of choosing from a wide range of
+                            Savings Accounts with different features and benefits.
+                            The Savings Accounts are designed to meet the banking needs of people from all walks of
+                            life.
+                            Each Savings Account offers unique features such as high transaction limit, free cheque
+                            books, etc.
+                        </p>
+                        <a href="{%url 'Account:account'%}">Apply Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal3 -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Buisness Account</h3>
+                    <div class="container-fluid">
+                        <p>
+                            A business account at NOVASCOTIA consists of a current account but with additional features
+                            and services.
+                            NOVASCOTIA has over 15 different current account options³ depending on the type of business
+                            you have.
+                            You can find which one of the accounts work best for you by either using your basis annual
+                            turnover and segment as qualifiers or based on your frequency of transactions and patterns.
+                            Here are some examples of the types of current accounts NOVASCOTIA has.
+                        </p>
+                        <a href="{%url 'Account:account'%}">Apply Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal4 -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Gold Loan</h3>
+                    <div class="container-fluid">
+                        <p>
+                            Life is full of opportunities. Do not allow the opportunities to pass just because of
+                            financial constraint.
+                            Get instant gold loan by bringing your gold jewellery at any branch of ICICI Bank.
+                            Your gold stays safe while you can go ahead and take advantage of every opportunity.
+                        </p>
+                        <a href="{%url 'Account:loan_detail'%}">Apply Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal4 -->
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Business Loan</h3>
+                    <div class="container-fluid">
+                        <p>
+                            With our Business Growth Loan, continue to stay ahead of your competitors ,
+                            scale your business in a hassle free environment. Take it to new heights with additional
+                            financial help from NOVASCOTIA Bank.
+                            We are here to support you at every step of the way because in you we trust. We curate our
+                            Business Growth Loan with competitive interest rates, flexible tenures and minimal
+                            documentation to meet your every business need.
+                            An additional attractive feature of the Business Growth Loan is the access to an overdraft
+                            facility,
+                            that is you pay interest only on the utilised loan amount together with a credit protection
+                            plan.
+                            Adapt your business with changing customer needs or technological advancement or scale up
+                            your operations,
+                            the list is endless and choice is yours to utilise the Business Growth Loan the way you
+                            like.
+                        </p>
+                        <a href="{%url 'Account:loan_detail'%}">Apply Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal6 -->
+<div class="modal fade" id="myModal6" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Business Loan</h3>
+                    <div class="container-fluid">
+                        <p>
+                            Our tailor made home loans caters to customers of all age groups and employment category. We
+                            provide longer tenure loans of up to 30 years, telescopic repayment option, under adjustable
+                            rate option that specifically caters to younger customers to become home owners at an early
+                            stage of their life.
+                        </p>
+                        <a href="{%url 'Account:loan_detail'%}">Apply Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

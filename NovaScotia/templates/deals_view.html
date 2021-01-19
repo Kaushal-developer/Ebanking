@@ -1,0 +1,45 @@
+{%extends 'base1.html'%}
+{%load static%}
+{%block data%}
+
+
+
+<div class="container">
+    <br><br><br><br><br>
+    <div class="card text-white bg-info">
+        <div class="card-header">
+            List of Active Deals
+        </div>
+        <div class="card-body text-white">
+            <table class="table text-white table-bordered-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in z%}
+                    <tr>
+                        <td>{{i.offer_id}}</td>
+                        <td>{{i.heading}}</td>
+                        <td>{{i.date}}</td>
+                        <td>{{i.desc}}</td>
+                        <td><a href="{{i.pic.url }}"><img src="{{i.pic.url }}" alt="Cinque Terre" width="250 "
+                            height="150"></a></td>
+                        <td><a href="{%url 'NovaScotia:deals_update' i.offer_id %}" class="text-white"><button>Update</button></a></td>
+                        <td><a href="{%url 'NovaScotia:deals_delete' i.offer_id %}" class="text-white"><button>Delete</button></a></td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

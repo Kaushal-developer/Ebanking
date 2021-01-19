@@ -1,0 +1,75 @@
+{%extends 'master.html'%}
+{%load static%}
+
+{%block content2%}
+{%if z is not None %}
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+
+
+{%block content1%}
+<div class="container">
+    <br>
+    <h1 class="bg-primary text-center">HOME LOAN EMI CALCULATORS</h1>
+    <br>
+    <br>
+    <form method="POST">
+        <div class="row">
+            <div class="col-sm-6">
+                {%csrf_token%}
+
+                <label class="form-label">LOAN AMOUNT (1lac to 1cr)</label>
+                <input type="range" class="form-range" value="100000" name="amount" min="100000" max="10000000"
+                    id="customRange1">
+                <label for="customRange2" class="form-label">TENURE (MONTHS)</label>
+                <input type="range" class="form-range" value="12" name="months" min="12" max="360" id="customRange2">
+                <label for="customRange3" class="form-label">INTREST RATE (6% to 12%)</label>
+                <input type="range" class="form-range" value="7" name="rate1" min="7" max="11" step="1"
+                    id="customRange3">
+            </div>
+
+            <div class="col-sm-3"><br>
+                <p>Amount: <span id="amt"></span></p><br>
+                <p>Months: <span id="mon"></span></p><br>
+                <p>Rate: <span id="rate2"></span></p>
+            </div>
+            <div class="col-sm-3">
+                <br>
+                <p class="bg-primary text-center text-white">Equated Monthly Installment (EMI) will be <br>{{z}}</p>
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+
+<script>
+    var rangeslider1 = document.getElementById("customRange1");
+    var output1 = document.getElementById("amt");
+    output1.innerHTML = rangeslider1.value;
+
+    rangeslider1.oninput = function () {
+        output1.innerHTML = this.value;
+    }
+    var rangeslider2 = document.getElementById("customRange2");
+    var output2 = document.getElementById("mon");
+    output2.innerHTML = rangeslider2.value;
+
+    rangeslider2.oninput = function () {
+        output2.innerHTML = this.value;
+    }
+    var rangeslider3 = document.getElementById("customRange3");
+    var output3 = document.getElementById("rate2");
+    output3.innerHTML = rangeslider3.value;
+
+    rangeslider3.oninput = function () {
+        output3.innerHTML = this.value;
+    }  
+</script>
+
+{%endblock%}

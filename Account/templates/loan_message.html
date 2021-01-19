@@ -1,0 +1,55 @@
+{%extends 'master.html'%}
+{%load static%}
+{% load qr_code %}
+{%block content2%}
+{%if z is not None %}
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+
+{%block content1%}
+<br>
+{%for message in messages%}
+<h1 class="text-center">{{message}}</h1>
+{%endfor%}
+<br>
+{%if not z11%}
+<div class="container">
+    <h1>Thanks For applying loan sanction request.</h1>
+    <p>Have Good Day.</p>
+    <p>Your Loan Application is in under verification process please wait.....</p>
+</div>
+{%else%}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            {% qr_from_text z7 size="s" image_format="png" error_correction="L" %}
+        </div>
+        <div class="col-sm-6"><br><br>
+            <div class="card">
+                <div class="card-body">
+                    <p> Welcome to the bank of <span class="badge bg-info text-dark">NOVASCOTIA</span>.</p><br>
+                    <ul class="list-group">
+                        <li class="list-group-item">Name: <strong> {{z5}}</strong></li>
+                        <li class="list-group-item">Mobile No:<strong> {{z5.mob}}</strong></li>
+                        <li class="list-group-item">Email:<strong> {{z5.email}}</strong></li>
+                        <li class="list-group-item">Loan type:<strong>{{z11.loan_type}}</strong></li>
+                        <li class="list-group-item">Current Accunt Balance: <strong>{{z5.loan_amount}}</strong></li>
+                        <li class="list-group-item">Rate: <strong> {{z5.rate}}</strong></li>
+                        <li class="list-group-item">Year: <strong> {{z5.years}}</strong></li>
+                        <li class="list-group-item">Want to Update data?</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{%endif%}
+{%endblock%}

@@ -1,0 +1,126 @@
+{% extends 'master.html'%}
+{% load static %}
+{%block content2%}
+
+{%if z is not None %}
+<!-- <audio controls autoplay style="display: none;"><source src="{%static '/voice/speech1.mp3'%}" type="audio/mp3"></audio> -->
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+{%block content1%}
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-sm-6"><br><br><br><br><br><br><br><br><br>
+				<h2>Our <strong>Corporate</strong>Office.</h2>
+				<p>NOVASCOTIA Bank Limited, Corporate Office,<br>
+				   Bombay Dyeing Mills Compound,<br>
+				   Pandurang Budhkar Marg,Worli,<br>
+				   Mumbai - 400 025	</p>
+		</div>
+		<div class="col-sm-6"><br><br><br>
+			<img src="{% static 'images/scotiabank.jpg'%}" alt=" " class="img-responsive" />
+
+		</div>
+
+	</div>
+</div>
+<!-- courses -->
+<div class="team">
+	<div class="container">
+		<div class="w3_agile_team_grid">
+			<div class="w3_agile_team_grid_left">
+				<h3 class="w3l_header w3_agileits_header"> <span>Vision</span> of the Bank</h3>
+				<p class="sub_para_agile">To be the preferred financial solutions provider excelling in customer delivery through insight, empowered employees and smart use of technology</p>
+			</div>
+		</div>
+		<div class="agile_team_grids_top">
+			<div class="col-md-6 w3ls_banner_bottom_left w3ls_courses_left">
+				<div class="w3ls_courses_left_grids">
+					<div class="w3ls_courses_left_grid">
+						<h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Customer Centricity</h3>
+						<p>We are looking at the overall <strong>Customer lifetime value</strong> and concentrating our efforts on those customer segments that were most valuable and interesting to optimize profit.</p>
+					</div>
+					<div class="w3ls_courses_left_grid">
+						<h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Ethics</h3>
+						<p>Ethics means the set of rules or principles that the organization should follow. While in business ethics refers to a code of conduct that businesses are expected to follow while doing business. Through ethics, a standard is set for the organization to regulate their behavior.</p>
+					</div>
+					<div class="w3ls_courses_left_grid">
+						<h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Transparency</h3>
+						<p>Ethics means the set of rules or principles that the organization should follow. While in business ethics refers to a code of conduct that businesses are expected to follow while doing business. Through ethics, a standard is set for the organization to regulate their behavior.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 agileits_courses_right"><br><br>
+				<img src="{% static 'images/2.jpg'%}" alt=" " class="img-responsive" />
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //courses -->
+<!-- stats -->
+<div class="stats">
+	<div class="col-md-3 w3layouts_stats_left w3_counter_grid">
+		<p class="counter">1,546</p>
+		<h3>Invesment Planning</h3>
+	</div>
+	<div class="col-md-3 w3layouts_stats_left w3_counter_grid1">
+		<p class="counter">14,345</p>
+		<h3>Commodities Trading</h3>
+	</div>
+	<div class="col-md-3 w3layouts_stats_left w3_counter_grid2">
+		<p class="counter">563</p>
+		<h3>Wealth Management</h3>
+	</div>
+	<div class="col-md-3 w3layouts_stats_left w3_counter_grid3">
+		<p class="counter">2,874</p>
+		<h3>Award's won</h3>
+	</div>
+	<div class="clearfix"> </div>
+</div>
+<div class="testimonials">
+	<div class="container">
+		<h3 class="w3l_header w3_agileits_header">Our <span>Team</span></h3>
+		<p class="sub_para_agile">Special thanks to the all of you.</p>
+		<div class="w3ls_testimonials_grids">
+			<section class="center slider">
+				<div class="agileits_testimonial_grid">
+					<div class="w3l_testimonial_grid">
+						<p>Encryption Specialist</p>
+						<h4>Ravji Patel</h4>
+						<h5>Tech Leader</h5>
+						<div class="w3l_testimonial_grid_pos">
+							<img src="{% static 'images/1.png'%}" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+				<div class="agileits_testimonial_grid">
+					<div class="w3l_testimonial_grid">
+						<p>Designer Specialist</p>
+						<h4>Khushbu Patel</h4>
+						<h5>Tech Leader</h5>
+						<div class="w3l_testimonial_grid_pos">
+							<img src="{% static 'images/2.png'%}" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+				<div class="agileits_testimonial_grid">
+					<div class="w3l_testimonial_grid">
+						<p>Marketing Specialist</p>
+						<h4>Jagadish Patel</h4>
+						<h5>Sales Enforcements Executive</h5>
+						<div class="w3l_testimonial_grid_pos">
+							<img src="{% static 'images/3.png'%}" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+{%endblock%}

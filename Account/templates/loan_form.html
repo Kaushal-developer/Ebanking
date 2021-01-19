@@ -1,0 +1,135 @@
+{%extends 'master.html'%}
+{%load static%}
+{%block content2%}
+{%if z is not None %}
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+
+
+{%block content1%}
+<br>
+{%for message in messages%}
+{{message}}
+{%endfor%}
+
+
+<h2 class="text-white bg-primary">Pleas fill the form below to sanction loan instantly </h2><br>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="form-row">
+		<div class="form-group col-md-6">
+            <label for="cust">Existing Customer:</label>
+            <select id="cust" name="exist_cust" class="form-control">
+				<option selected>Choose...</option>
+				<option>Yes</option>
+                <option>No</option>
+            </select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="Aname">Applicant's Name:</label>
+			<input type="text" class="form-control" name="Aname" id="Aname" placeholder="Applicant's Name:">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group 	col-md-9">
+			<label for="inputAddress">Address</label>
+			<input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St">
+		</div>
+		<div class="form-group col-md-3">
+			<label for="personimage">Applicant's PassPort size Image</label>
+			<input type="file" class="form-control-file" name="image_person" id="personimage">
+		</div>
+    </div>
+    <div class="form-row">
+		<div class="form-group 	col-md-4">
+			<label for="mobi">Mobile</label>
+			<input type="text" class="form-control" name="mobile" id="mob" placeholder="+91">
+		</div>
+		<div class="form-group col-md-4">
+            <label for="email">Email</label>
+			<input type="email" class="form-control" name="email" id="email" placeholder="@email.com">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="loan_type">Loan Type</label>
+			<select id="loan_type" name="loan_type" class="form-control">
+				<option selected>Choose...</option>
+				<option>Home Loan</option>
+				<option>Educational Loan</option>
+				<option>Car Loan</option>
+				<option>Business Loan</option>
+                <option>Two Wheeler Loan</option>
+                <option>Gold Loan</option>
+			</select>
+
+        </div>
+        
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-4">
+			<label for="inputState">State</label>
+			<select id="inputState" name="state" class="form-control">
+				<option selected>Choose...</option>
+				<option>Gujarat</option>
+				<option>Hariyana</option>
+				<option>Aandhrapradesh</option>
+				<option>Punjab</option>
+				<option>U.P.</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputarea">City</label>
+			<select id="inputarea" name="city" class="form-control">
+				<option selected>Choose...</option>
+				<option>Ahmedabad</option>
+				<option>Surat</option>
+				<option>Delhi</option>
+				<option>GOA</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputZip">Pincode</label>
+			<input type="number" name="pincode" class="form-control" id="inputZip">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+            <label for="type">Employment Type:</label>
+            <select id="type" name="Employ_type" class="form-control">
+				<option selected>Choose...</option>
+				<option>Self Employed</option>
+                <option>Salaried</option>
+            </select>    
+        </div>
+		<div class="form-group col-md-6">
+			<label for="range">Salary Range Annual:</label>
+            <select id="range" name="salary_range" class="form-control">
+				<option selected>Choose...</option>
+				<option>upto 2 Lacs</option>
+                <option>upto 5 Lacs</option>
+                <option>upto 10 Lacs</option>
+                <option>More than 10 Lacs</option>
+            </select> 
+		</div>
+	</div>
+	
+
+
+
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="gridCheck">
+			<label class="form-check-label" for="gridCheck">
+				I am accepting all the terms and condition and all the documents uploaded are originals if its wrong
+				than only i am the responsible fir this.
+			</label>
+		</div>
+	
+
+	<button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>
+
+{%endblock%}

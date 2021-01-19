@@ -1,0 +1,121 @@
+{%extends 'master.html'%}
+{%load static%}
+
+{%block content2%}
+{%if z is not None %}
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+
+
+{%block content1%}
+<div class="banner1">
+    <div class="wthree_banner1_info">
+        <h3>Welcome to the <span>Loan</span> Section</h3>
+    </div>
+</div>
+<div class="container">
+    <h1><strong>NOVASCOTIA Bank</strong>Loans</h1>
+    <br>
+    <p>At Axis Bank, we believe your journey should continue without any speed bumps. This is why we bring you
+        customized Bank Loans at competitive interest rates. To get started, check your loan eligibility using our
+        simple loan calculators. You can submit your Bank Loan application online in three easy steps and avail the most
+        attractive interest rates and comfortable repayment tenures.</p>
+    {%if z is not None %}
+		{%if z1 is not None%}
+		<a href="{%url 'Account:loan_form' z %}" class="btn btn-primary" style="justify-content: center;">View Account</a>
+		{%else%}
+		<a href="{%url 'Account:loan_form' z %}" class="btn btn-primary" style="justify-content: center;">Apply Now</a>
+		{%endif%}
+		{%else%}
+		<a href="{%url 'bank:login'  %}" class="btn btn-primary" style="justify-content: center;">Apply Now</a>
+	{%endif%}
+    <br>
+    <br>
+    <h3>Explore our range of loans designed for your <strong>unique needs</strong> .</h3>
+    <br>
+    <br>
+</div>  
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Home Loan</h3>
+                <img src="{%static 'images/home.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Choose from a wide range of home loans depending on your needs</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Personal Loan</h3>
+                <img src="{%static 'images/personal.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Avail personal loan for holiday, home renovation & marriage at attractive interest rates</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Business Loan</h3>
+                <img src="{%static 'images/business.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Grow your business with minimum documentation & quick approvalss</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Car Loan</h3>
+                <img src="{%static 'images/car.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Benefit from a high Loan To Value ratio</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Two Wheeler Loans</h3>
+                <img src="{%static 'images/bike.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Upto zero down payment and attractive interest rates</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Education Loan</h3>
+                <img src="{%static 'images/edu.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Loans available for a variety of courses with easy loan disbursal</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 w3_agile_services_grid">
+            <div class="agile_services_grid1 wthree_services_grid1">
+                <h3 class="w3l_header w3_agileits_header">Gold Loan</h3>
+                <img src="{%static 'images/gold.jpg' %}" class="image-responsive" height="180" width="318">
+                <div class="agile_services_grid1_sub">
+                    <p>Avail best interest rates on your gold.</p>
+                    <a href="{% url 'Account:loan_calc' %}" style="border-style: solid;">Calculate Savings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,48 @@
+{%extends 'base1.html'%}
+{%load static%}
+{%block data%}
+
+    <div class="container">
+        <h2>User's Account data</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Applicant's Name:<strong>{{z.Aname}}</strong></li>
+            <li class="list-group-item">Applicant's Father's Name:<strong>{{z.Fname}}</strong></li>
+            <li class="list-group-item">Applicant's Mother's Name:<strong>{{z.Mname}}</strong></li>
+            <li class="list-group-item">Address:<strong>{{z.Address}}</strong>
+            <li class="list-group-item">Applicant's PassPort size Image:<a href="{{z.Applicants_image.url }}"> <img
+                        src="{{z.Applicants_image.url }}" class="rounded-circle" alt="Cinque Terre" width="50px"
+                        height="50px"></a></li>
+            <li class="list-group-item">state: <strong>{{z.state}}</strong></li>
+            <li class="list-group-item">City: <strong>{{z.city}}</strong></li>
+            <li class="list-group-item">Pincode: <strong>{{z.pincode}}</strong></li>
+            <li class="list-group-item">Date of Birth: <strong>{{z.dob}}</strong></li>
+            <li class="list-group-item">Mobile No.: <strong>{{z.mob}}</strong></li>
+            <li class="list-group-item">Aadhar Card No: <strong>{{z.aadhar}}</strong></li>
+            <li class="list-group-item">Pan Card No: <strong>{{z.pancard}}</strong></li>
+            <li class="list-group-item">Account Type: <strong>{{z.account_type}}</strong></li>
+            <li class="list-group-item">Applicant's Aadhar Card size Image: <a href="{{z.aadhar_image.url }}"><img
+                        src="{{z.aadhar_image.url }}" class="rounded-circle" alt="Cinque Terre" width="50px"
+                        height="50px"></a></li>
+            <li class="list-group-item">Applicant's Pan Card size Image: <a href="{{z.pan_image.url }}"><img
+                        src="{{z.pan_image.url }}" class="rounded-circle" alt="Cinque Terre" width="50px"
+                        height="50px"></a></li>
+            <li class="list-group-item">Applicant's Signature Image:<a href="{{z.Sign.url }}"><img src="{{z.Sign.url }}"
+                        class="rounded-circle" alt="Cinque Terre" width="50px" height="50px"></a> </li>
+
+            <li class="list-group-item">
+               <a href="{% url 'NovaScotia:approve' z %}"> <input type="button" class="btn btn-success" value="Approve"></a>
+               <a href="{% url 'NovaScotia:Disapprove' z %}">  <input type="button" class="btn btn-danger" value="Disapprove"></a>
+            </li>
+
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+{%endblock%}

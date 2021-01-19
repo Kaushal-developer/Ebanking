@@ -1,0 +1,41 @@
+{% extends 'master.html' %}
+{%load static%}
+
+
+{%block content1%}
+<!-- Modal content-->
+<div class="modal-content">
+    <div class="signin-form profile">
+        <div class="row">
+            <div class="col-sm-6"><br><br><br><br>
+                <h3 class="agileinfo_sign">USER VERIFICATION</h3><br><br>
+                <div class="login-form">
+
+                    <form method="POST">
+                        {%csrf_token%}
+                        <input type="number" name="n1" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                        <input type="number" name="n2" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                        <input type="number" name="n3" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                        <input type="number" name="n4" maxLength="1" size="1" min="0" max="9"
+                            pattern="[0-9]{1}" /><br><br>
+                        <input type="submit" value="VERIFY">
+                        <br>
+                    </form> <br>
+                    <div class="login-social-grids">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <br><br><br><br>
+                <img src="{% static 'images/cyber12.jpg'%}" alt=" " class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

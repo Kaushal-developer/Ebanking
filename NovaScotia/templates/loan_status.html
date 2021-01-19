@@ -1,0 +1,40 @@
+{%extends 'base1.html'%}
+{%load static%}
+{%block data%}
+
+    <div class="container">
+        <br><br><br><br><br>
+        <div class="card bg-info text-white">
+            <div class="card-header text-white">
+                Account list for verification
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered text-white">
+                    <thead>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Status of Loan</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in z%}
+                        <tr>
+
+                            <td>{{i.name}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.mob}}</td>
+                            <td>{{i.loan_approve}}</td>
+                            <td><a href="{% url 'NovaScotia:loan_view' i.email %}"><button type="button"
+                                class="btn btn-warning">Info</button></a></td>
+                            
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+
+{%endblock%}

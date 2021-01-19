@@ -1,0 +1,57 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="container"><br><br><br><br><br>
+        <div class="card text-center bg-warning">
+            <div class="card-header">
+                NOVASCOTIA Administrative Login
+            </div>
+
+
+            <div class="card-body">
+                {%for message in messages%}
+                <h5 class="card-title">{{message}}</h5>
+                {%endfor%}
+                <form method="POST">
+                    {%csrf_token%}
+                    <label for="em">Email:</label><br>
+                    <input type="email" name="ema" id="em" class="btn btn-info"><br>
+                    <label for="ps">PasssWord:</label><br>
+                    <input type="password" id="ps" name="pas" class="btn btn-info"><br>
+                    <br>
+                    <a href="{%url 'NovaScotia:signup_admin' %}">
+                        <p>Don't have an account? Click here to open new Account</p>
+                    </a>
+                    <button type="submit" name="l" class="btn btn-info">LOGIN</button>
+                </form>
+
+            </div>
+
+            <div class="card-footer text-muted">
+                © 1998 NOVASCOTIA. All rights reserved | Powered by KAUSHAL@TECHIQUECKY
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

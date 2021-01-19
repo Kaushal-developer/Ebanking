@@ -1,0 +1,147 @@
+{%extends 'master.html'%}
+{%load static%}
+{%block content2%}
+{%if z is not None %}
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+
+
+{%block content1%}
+<br>
+
+{%for message in messages%}
+{{message}}
+{%endfor%}
+<h2 class="text-white bg-primary">Pleas fill the form below to Open bank account instantly </h2><br>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="form-row">
+		<div class="form-group col-md-4">
+			<label for="inputname">Applicant Name:</label>
+			<input type="text" class="form-control" name="Aname" id="inputname" placeholder=" Name:">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="fname">Applicant's Father's Name:</label>
+			<input type="text" class="form-control" name="Fname" id="fname" placeholder="Father's Name:">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="mname">Applicant's Mother Name</label>
+			<input type="text" class="form-control" name="Mname" id="mname" placeholder="Mother Name">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group 	col-md-9">
+			<label for="inputAddress">Address</label>
+			<input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St">
+		</div>
+		<div class="form-group col-md-3">
+			<label for="personimage">Applicant's PassPort size Image</label>
+			<input type="file" class="form-control-file" name="image_person" id="personimage">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-4">
+			<label for="inputState">State</label>
+			<select id="inputState" name="state" class="form-control">
+				<option selected>Choose...</option>
+				<option>Gujarat</option>
+				<option>Hariyana</option>
+				<option>Aandhrapradesh</option>
+				<option>Punjab</option>
+				<option>U.P.</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputarea">City</label>
+			<select id="inputarea" name="city" class="form-control">
+				<option selected>Choose...</option>
+				<option>Ahmedabad</option>
+				<option>Surat</option>
+				<option>Delhi</option>
+				<option>GOA</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputZip">Pincode</label>
+			<input type="number" name="pincode" class="form-control" id="inputZip">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-3">
+			<label for="inputdob">Date of Birth</label>
+			<input type="date" class="form-control" name="dob" id="inputdob" placeholder="DD-MM-YYYY	">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputEmail4">Email</label>
+			<input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+		</div>
+		<div class="form-group col-md-3">
+			<label for="inputmo">Mobile No</label>
+			<input type="tel" class="form-control" name="mob" id="inputmo" placeholder="Mobile">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-3">
+			<label for="inputac">Aathar Card No:</label>
+			<input type="number" class="form-control" name="aadhar" id="inputac">
+		</div>
+		<div class="form-group col-md-3">
+			<label for="exampleFormControlFile1">Scanned copy of Aadhar card</label>
+			<input type="file" class="form-control-file" name="image_aadhar" id="exampleFormControlFile1">
+		</div>
+		<div class="form-group col-md-3">
+			<label for="inputpan">Pan Card No:</label>
+			<input type="text" class="form-control" name="pan" id="inputpan">
+		</div>
+		<div class="form-group col-md-3">
+			<label for="examplepanimage">Scanned copy of Pan card</label>
+			<input type="file" class="form-control-file" name="image_pan" id="examplepanimage">
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-check col-md-12">
+			<legend class="col-form-label">Select Account type</legend>
+
+			<div class="row">
+				<div class="form-check form-check-inline col-md-12">
+					<input class="form-check-input" type="radio" name="ACC" id="inlineRadio1" value="Saving">
+					<label class="form-check-label" for="inlineRadio1">Saving Account</label>
+
+					<input class="form-check-input" type="radio" name="ACC" id="inlineRadio2" value="Business">
+					<label class="form-check-label" for="inlineRadio2">Business Account</label>
+
+					<input class="form-check-input" type="radio" name="ACC" id="inlineRadio3" value="International">
+					<label class="form-check-label" for="inlineRadio3">International Account</label>
+				</div>
+			</div>
+		</div>
+	</div><br>
+	<div class="row">
+		<div class="form-group col-md-12">
+			<label for="examplepanimage">Scanned copy of Applicant's Signature</label>
+			<input type="file" class="form-control-file" name="image_sign" id="examplepanimage">
+
+		</div>
+
+	</div>
+	<br>
+
+	<div class="form-group">
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="gridCheck">
+			<label class="form-check-label" for="gridCheck">
+				I am accepting all the terms and condition and all the documents uploaded are originals if its wrong
+				than only i am the responsible fir this.
+			</label>
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>
+
+{%endblock%}

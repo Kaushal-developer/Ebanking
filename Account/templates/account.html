@@ -1,0 +1,156 @@
+{%extends 'master.html'%}
+{%load static%}
+
+{%block content2%}
+{%if z is not None %}
+<li><a href="{% url 'bank:logout' %}"><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
+{%else%}
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a></li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+{%endif%}
+{%endblock%}
+
+
+
+
+{%block content1%}
+<div class="banner1">
+	<div class="wthree_banner1_info">
+		<h3>Welcome to the <span>ACCOUNT</span> Section</h3>
+	</div>
+</div>
+<div class="container">
+	<img src="{% static '/images/banner10.jpg' %}" class="card-img"
+			alt="Cinque Terre" width="1000px" height="250px">
+	<div class="card-img-overlay">
+	<h1 class="card-title">A little extra protection for your peace of mind</h1>
+	<p class="card-text">Complimentary Hospital Cash Insurance including COVID-19 cover<br>
+		with a new Savings Account*</p>
+		<br>
+		<br>
+		{%if z is not None %}
+		{%if z1 is not None%}
+		<a href="{%url 'Account:acform' z %}" class="btn btn-primary" style="justify-content: center;">View Account</a>
+		{%else%}
+		<a href="{%url 'Account:acform' z %}" class="btn btn-primary" style="justify-content: center;">Apply Now</a>
+		{%endif%}
+		{%else%}
+		<a href="{%url 'bank:login'  %}" class="btn btn-primary" style="justify-content: center;">Apply Now</a>
+		{%endif%}
+		<br><br>
+	</div>
+	<h1>Complimentary Hospital Cash Insurance</h1><br>
+	<p>Complimentary hospital cash insurance of up to Rs.20,000 per year covering COVID-19 and many more diseases. This
+		feature is for Easy Access, Prime & Liberty Savings/Salary Account holders. For more details, <a>click here.</a>
+	</p>
+	<br>
+
+	<h3>Open NOVASCOTIA Bank <strong>Accounts</strong></h3>
+	<br>
+	<p>With the world going cashless, bank accounts have become a necessity rather than an option. Having a bank account
+		is
+		essentially having a 24x7 security for your hard-earned money. But safety isn’t the only feature we offer. You
+		can
+		earn interest on your savings, make hassle-free payments, and manage all your expenses online.</p>
+	<br>
+	<p>At NOVASCOTIA Bank, you can open a bank account suitable to your needs. In a hurry? Open an Axis ASAP Savings
+		Account
+		in 3 simple steps and avail unmatched benefits! Looking for an easy, streamlined way to pay your employees?
+		Explore
+		our Salary Account today! Want to keep your valuables safe? Avail our Safe Deposit Lockers at nominal fees. For
+		senior citizens, we offer Pension Disbursement Accounts and National Pension System for ease of managing pension
+		payments and convenient banking services. Open an online bank account with Axis Bank and let your money work for
+		you!</p>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Savings Account</h4><br>
+						<p class="card-text" style="font-size: small;">Choose from a wide variety of accounts to suit
+							your banking needs.</p><br>
+						<a href="#" class="btn btn-primary" style="justify-content: center;">View More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Salary Account</h4><br>
+						<p class="card-text" style="font-size: small;">Give employees hassle-free access to their
+							salaries with plenty facilities</p><br>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Current Account</h4><br>
+						<p class="card-text" style="font-size: small;">Carry out as many withdrawals & deposits as per
+							your business requirement.</p>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Safe Deposit Locker</h4><br>
+						<p class="card-text" style="font-size: small;">Choose your desired locker size & keep your
+							valuables secure.</p><br>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Safe Custody</h4><br>
+						<p class="card-text" style="font-size: small;">Keep your documents and other valuable objects in
+							safe custody.</p><br>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">National Pension System</h4><br>
+						<p class="card-text" style="font-size: small;">Secure income for your old age with this
+							investment tool.</p><br>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Pension Disbursement Accountt</h4><br>
+						<p class="card-text" style="font-size: small;">Manage your pension payments easily.</p><br>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mx-auto" style="border-style: solid;border-color: rgb(37, 149, 194);">
+					<div class="card-body">
+						<h4 class="card-title">Sukanya Samriddhi Yojana</h4><br>
+						<p class="card-text" style="font-size: small;">Save to meet financial needs like education &
+							marriage of girl child.</p><br>
+						<a href="#" class="btn btn-primary">View More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- <div class="icon-box col-md-3 col-sm-6"><a class="agile-icon" href="#"><i class="fa fa-credit-card"></i> fa-credit-card</a></div> -->
+
+</div>
+
+{%endblock%}

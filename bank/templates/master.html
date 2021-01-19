@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NOVA SCOTIA</title>
+
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Funding Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //custom-theme -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/mainStyles.css'%}" />
+    <link rel='stylesheet' href="{% static 'css/dscountdown.css'%}" type='text/css' media='all' />
+
+    <link rel="stylesheet" href="{% static 'css/flexslider.css'%}" type="text/css" media="screen" property="" />
+    <!-- gallery -->
+    <link href="{% static 'css/lsb.css'%}" rel="stylesheet" type="text/css">
+    <!-- //gallery -->
+    <!-- font-awesome-icons -->
+    <link href="{% static 'css/font-awesome.css'%}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,900" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- banner -->
+    <div class="header">
+
+        <div class="w3layouts_header_right">
+            <div class="agileits-social top_content">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="w3layouts_header_left">
+            <ul>
+
+                {%block content2%}
+                {%endblock%}
+
+            </ul>
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="header_mid">
+        <div class="w3layouts_header_mid">
+            <ul>
+                <li>
+                    <div class="header_contact_details_agile"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <div class="w3l_header_contact_details_agile">
+                            <div class="header-contact-detail-title">Send us a Message</div>
+                            <a href="mailto:kaushal.developer@yahoo.com">kaushal.developer@yahoo.com</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="header_contact_details_agile"><i class="fa fa-phone" aria-hidden="true"></i>
+                        <div class="w3l_header_contact_details_agile">
+                            <div class="header-contact-detail-title">Give us a Call</div>
+                            <a class="w3l_header_contact_details_agile-info_inner"> 9427023068 </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="header_contact_details_agile"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <div class="w3l_header_contact_details_agile">
+                            <div class="header-contact-detail-title">Opening Hours</div>
+                            <a class="w3l_header_contact_details_agile-info_inner">Mon - Sat: 10:00 A.M. - 7:00P.M</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="header_contact_details_agile"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <div class="w3l_header_contact_details_agile">
+                            <div class="header-contact-detail-title">SILVERSTAR S.G.Highway</div>
+                            <a class="w3l_header_contact_details_agile-info_inner">Ahmedabad-382481 </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header navbar-left">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="{% url 'bank:home'%}"><span>NOVASCOTIA</span></a></h1>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <nav class="link-effect-2" id="link-effect-2">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'bank:home'%}"><span>Home</span></a></li>
+                        <li><a href="{% url 'bank:about'%}"><span>About Us</span></a></li>
+                        
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"><span>PRODUCTS</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="{% url 'Account:account'%}">ACCOUNTS</a></li>
+                                <li><a href="#">CREDIT CARDS</a></li>
+                                <li><a href="{% url 'Account:loan_detail' %}">Loan</a></li>   
+                                <li><a href="#">OTHERS </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"><span>PAYMENTS</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="#">Fund Transfer</a></li>
+                                <li><a href="#">BillPay & Recharge</a></li>
+                                <li><a href="#">UPI</a></li>
+                                <li><a href="#">Scan & Pay </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"><span>QUICK LINKS</span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="#">OPEN FD</a></li>
+                                <li><a href="#">REQUEST CHEQUE BOOK</a></li>
+                                <li><a href="#">BLOCK & REQUEST DEBIT CARDS</a></li>
+                                <li><a href="#">MANAGE CREDIT CARDS</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+            </div>
+
+        </nav>
+    </div>
+    {% block content1%}
+    {% endblock%}
+
+
+
+    <!-- //testimonials -->
+    <!-- footer -->
+    <div class="footer_agile_w3ls">
+        <div class="container">
+            <div class="agileits_w3layouts_footer_grids">
+                <div class="col-md-3 footer-w3-agileits">
+                    <h3>Training Grounds</h3>
+                    <ul>
+                        <li>Ahmedabad</li>
+                        <li>Banglore</li>
+                        <li>Bombay</li>
+                        <li>Delhi</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-agileits">
+                    <h3>Specialized</h3>
+                    <ul>
+                        <li>EPAY system</li>
+                        <li>Secured by NOVA</li>
+                        <li>Fastest</li>
+                        <li>unknown printer</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-wthree">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li>JIO</li>
+                        <li>TCS</li>
+                        <li>ZYDUS</li>
+                        <li>BIRLA</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 footer-agileits-w3layouts">
+                    <h3>Our Links</h3>
+                    <ul>
+                        <li><a href="{% url 'bank:home' %}">Home</a></li>
+                        <li><a href="{% url 'bank:about' %}">About</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+            <div class="agileits_w3layouts_logo logo2">
+                <h2><a href="index.html">NOVASCOTIA</a></h2>
+                <div class="agileits-social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="wthree_copy_right">
+        <div class="container">
+            <p>© 1998 NOVASCOTIA. All rights reserved | Powered by <a href="#">KAUSHAL@TECHIQUECKY</a></p>
+        </div>
+    </div>
+    <!-- //footer -->
+    {%block log%}
+    {%endblock%}
+
+    <!-- //Modal2 -->
+
+    <!-- //bootstrap-pop-up -->
+
+    <!-- js -->
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js'%}"></script>
+    <!-- //js -->
+    <!-- Counter required files -->
+    <script type="text/javascript" src="{% static 'js/dscountdown.min.js'%}"></script>
+    <script src="{% static 'js/demo-1.js'%}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.demo2').dsCountDown({
+                endDate: new Date("December 24, 2020 23:59:00"),
+                theme: 'black'
+            });
+        });
+    </script>
+    <!-- //Counter required files -->
+
+
+
+    <script src="{% static 'js/mainScript.js'%}"></script>
+    <script src="{% static 'js/rgbSlide.min.js'%}"></script>
+    <!-- carousal -->
+    <script src="{% static 'js/slick.js'%}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function () {
+            $(".center").slick({
+                dots: true,
+                infinite: true,
+                centerMode: true,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: true,
+                            centerMode: false,
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: true,
+                            centerMode: false,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    <!-- //carousal -->
+    
+    <!-- flexisel -->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 4,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 2
+                    }
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="{% static 'js/jquery.flexisel.js'%}"></script>
+    <!-- //flexisel -->
+    <!-- gallery-pop-up -->
+    <script src="{% static 'js/lsb.min.js'%}"></script>
+    <script>
+        $(window).load(function () {
+            $.fn.lightspeedBox();
+        });
+    </script>
+    <!-- //gallery-pop-up -->
+    <!-- flexSlider -->
+    <script defer src="{% static 'js/jquery.flexslider.js'%}"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //flexSlider -->
+
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="{% static 'js/move-top.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/easing.js'%}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smooth-scrolling -->
+    <!-- for bootstrap working -->
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <!-- //for bootstrap working -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+</body>
+
+</html>

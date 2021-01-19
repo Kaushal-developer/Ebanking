@@ -1,0 +1,55 @@
+{% extends 'master.html'%}
+
+{% load static %}
+
+{% block content2 %}
+<!-- <audio controls autoplay style="display: none;"><source src="{%static '/voice/speech1.mp3'%}" type="audio/mp3"></audio> -->
+<li><a href="{% url 'bank:login' %}"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a>
+</li>
+<li><a href="{% url 'bank:signup' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+		Sign up</a></li>
+{%endblock%}
+
+
+{%block content1%}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="signin-form profile"><br><br><br>
+				<h3 class="agileinfo_sign">Sign In</h3>
+				{% for message in messages %}
+                    <strong>Message:</strong> {{ message }}
+                {% endfor %}
+				<div class="login-form">
+					<form method="POST">
+						{% csrf_token %}
+						<input type="email" name="email" placeholder="E-mail" required="">
+						<input type="password" name="password" placeholder="Password" required="">
+						<div class="tp">
+							<input type="submit" name="login" value="Sign In">
+						</div>
+					</form>
+				</div>
+				<a href="{% url 'bank:forget' %}"> Forgot Your PassWord?</a>
+				<div class="login-social-grids">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+				
+				<p><a href="{% url 'bank:signup' %}"> Don't have an account? Click here to open new Account</a></p>
+			</div>
+		</div>
+		<!-- Modal2 -->
+
+		<div class="col-sm-6 justify-content-center">
+			<br><br><br><br>
+			<img src="{% static 'images/cyber2.png' %}" alt=" " class="img-responsive" width="700" height="400">
+			<br>
+		</div>
+
+	</div>
+</div>
+{%endblock%}
